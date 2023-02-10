@@ -34,15 +34,20 @@ function validarHotel(numeroDeReservaHotel) {
     })
 }
 
-function hayreservasDisponibles(Hotel, cantidadDeReservas){
+function hayreservasDisponibles(hotell, cantidadDeReservas){
 
-    const reservasDisponibles = Hotel.reservas.filter( (reserva) =>{
+    const reservasDisponibles = hotell.reservas.filter( (reserva) =>{
         return !reservaDeHotel.ocupada
     })
     
     return reservasDisponibles.length >= cantidadDeReservas
 
 }
+
+function calcularTotalDeLaReserva(hotell, cantidadDeReservas){
+    return cantidadDeReservas * hotell.precioReserva
+}
+
 
 // Inicio de programa
 alert("Hoteles disponibles. (La cumbre cordoba numero de reserva: A2BQ1), (Hotel calamuchita numero de reserva: 12SZ1), (Pajas Blancas numero de reserva: LZGD24)")
@@ -58,15 +63,20 @@ while(hotelesDisponibles !== "SALIR"){
     
     const hotell = validarHotel(hotelesDisponibles) // valida que el hotel existe
 
-    if(hotell !== undefined){
+    if(hotell !== undefined){ // si es que el hotel existe
 
         let cantidadDeReservas = (prompt("Ingrese la cantidad de reservas que quiere hacer"))
 
-        while(cantidadDeReservas <= 0 || !hayreservasDisponibles(hotell, cantidadDeReservas)){
+        while(cantidadDeReservas <= 0 || !hayreservasDisponibles(hotell, cantidadDeReservas)){ // hago que la cantidad de reservas que se puedan hacer sean mayor a 0 y que haya reservas disponibles
 
             let cantidadDeReservas = (prompt("Ingrese la cantidad de reservas que quiere hacer."))
         }
-        console.log(cantidadDeReservas)
+        
+        // CAlculo el total de la reserva del hotel
+
+        const totalReserva = calcularTotalDeLaReserva(hotell, cantidadDeReservas)
+        
+        alert(`El precio total de la reserva es ${hotell.numeroDeReservaHotel} en ${hotell.nombredeHotel} es de: $${totalReserva}`)
     
     } else{
         alert("Numero de reserva invalido")
