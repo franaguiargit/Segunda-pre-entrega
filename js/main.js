@@ -50,14 +50,14 @@ function calcularTotalDeLaReserva(hotell, cantidadDeReservas){
 
 
 // Inicio de programa
-alert("Hoteles disponibles. (La cumbre cordoba numero de reserva: A2BQ1), (Hotel calamuchita numero de reserva: 12SZ1), (Pajas Blancas numero de reserva: LZGD24)")
+alert("Hoteles disponibles. (La cumbre Córdoba N°reserva: A2BQ1), (Hotel Calamuchita N°reserva: 12SZ1), (Pajas Blancas N°reserva: LZGD24)")
 
 const listaDeReservasHotel = [
 new Hotel("A2BQ1", 100 ,"La Cumbre Resort", "Cordoba La Cumbre salamanca121"), 
 new Hotel("12SZ1", 125 , "Hotel Calamuchita", "Valle Calamuchita Los reartes 124"),
 new Hotel("LZGD24",80 , "Pajas blancas", "AV.Luchesse 504 Cordoba")]
     
-let hotelesDisponibles = prompt("Ingrese el hotel que quiere reservar. Si no ingrese SALIR si quiere cerrar el programa")
+let hotelesDisponibles = prompt("Ingrese el hotel que quiere reservar. Si no ingrese SALIR si quiere cerrar el programa (Ingrese un N° reserva disponible)")
 
 while(hotelesDisponibles !== "SALIR"){
     
@@ -65,11 +65,11 @@ while(hotelesDisponibles !== "SALIR"){
 
     if(hotell !== undefined){ // si es que el hotel existe
 
-        let cantidadDeReservas = (prompt("Ingrese la cantidad de reservas que quiere hacer"))
+        let cantidadDeReservas = parseInt(prompt("Ingrese la cantidad de reservas que quiere hacer"))
 
         while(cantidadDeReservas <= 0 || !hayreservasDisponibles(hotell, cantidadDeReservas)){ // hago que la cantidad de reservas que se puedan hacer sean mayor a 0 y que haya reservas disponibles
 
-            let cantidadDeReservas = (prompt("Ingrese la cantidad de reservas que quiere hacer."))
+            cantidadDeReservas = parseInt(prompt("Ingrese la cantidad de reservas que quiere hacer."))
         }
         
         // CAlculo el total de la reserva del hotel
@@ -81,7 +81,5 @@ while(hotelesDisponibles !== "SALIR"){
     } else{
         alert("Numero de reserva invalido")
     }
-
-
-
+    hotelesDisponibles = prompt("Ingrese el hotel que quiere reservar. Si no ingrese SALIR si quiere cerrar el programa (Ingrese un N° reserva disponible)")
 }
