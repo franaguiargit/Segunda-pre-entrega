@@ -53,9 +53,9 @@ function calcularTotalDeLaReserva(hotell, cantidadDeReservas){
 alert("Hoteles disponibles. (La cumbre cordoba numero de reserva: A2BQ1), (Hotel calamuchita numero de reserva: 12SZ1), (Pajas Blancas numero de reserva: LZGD24)")
 
 const listaDeReservasHotel = [
-new Hotel("A2BQ1","100 USD","La Cumbre Resort", "Cordoba La Cumbre salamanca121"), 
-new Hotel("12SZ1", "125 dolares", "Hotel Calamuchita", "Valle Calamuchita Los reartes 124"),
-new Hotel("LZGD24","80 USD", "Pajas blancas", "AV.Luchesse 504 Cordoba")]
+new Hotel("A2BQ1", 100 ,"La Cumbre Resort", "Cordoba La Cumbre salamanca121"), 
+new Hotel("12SZ1", 125 , "Hotel Calamuchita", "Valle Calamuchita Los reartes 124"),
+new Hotel("LZGD24",80 , "Pajas blancas", "AV.Luchesse 504 Cordoba")]
     
 let hotelesDisponibles = prompt("Ingrese el hotel que quiere reservar. Si no ingrese SALIR si quiere cerrar el programa")
 
